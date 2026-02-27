@@ -10,7 +10,7 @@ const authRoutes = require('./routes/auth');
 const excelRoutes = require('./routes/excel');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 // Security middleware
 app.use(helmet());
@@ -24,7 +24,7 @@ app.use(limiter);
 
 // CORS configuration
 app.use(cors({
-  origin: true, // Allow all origins temporarily
+  origin: ['https://excel-analytics-website.netlify.app', 'http://localhost:3000'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
