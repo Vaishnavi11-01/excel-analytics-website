@@ -61,7 +61,7 @@ app.use('*', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://exceladmin:excel123@cluster0.am29gtj.mongodb.net/excel-analytics?appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
